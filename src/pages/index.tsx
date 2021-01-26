@@ -2,9 +2,8 @@ import React from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import NextLink from 'next/link';
-import { Button, VStack, Wrap, Box } from '@chakra-ui/react';
+import { Button, VStack, Box } from '@chakra-ui/react';
 import Hero from 'components/website/hero';
-import Highlight from 'components/website/highlight';
 import MainLayout from 'layouts/main';
 
 const HomePage: NextPage = () => (
