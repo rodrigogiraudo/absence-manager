@@ -24,3 +24,9 @@ export type Member = {
 export type AbsenceWithMember = Absence & {
   member: Member;
 };
+
+export type UrlParams = {
+  userId?: string;
+  startDate?: string;
+  endDate?: string;
+};

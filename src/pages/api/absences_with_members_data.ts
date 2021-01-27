@@ -1,9 +1,16 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Absence, AbsenceWithMember, Member } from 'common/types';
+import { buildUrlParams } from 'utils';
 
 const getAllAbsencesWithMembers = async (req: NextApiRequest, res: NextApiResponse) => {
-  const absences: Absence[] = await (await fetch(`${process.env.API_URL}/api/absences`)).json();
-  const members: Member[] = await (await fetch(`${process.env.API_URL}/api/members`)).json();
+  const baseAbsencesURL = `${process.env.API_URL}/api/absences`;
+  const baseMembersURL = `${process.env.API_URL}/api/members`;
+  console.log('getAllAbsencesWithMembers => req?.query: ', req?.query);
+
+  const absencesRequestUrl = `${baseAbsencesURL}?${buildUrlParams(req?.query)}`;
+
+  const absences: Absence[] = await (await fetch(absencesRequestUrl)).json();
+  const members: Member[] = await (await fetch(baseMembersURL)).json();
 
   const absencesWithMembers = absences.map(
     (absence: AbsenceWithMember): AbsenceWithMember => {

@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { InferGetStaticPropsType, NextPage } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import {
@@ -16,12 +16,15 @@ import {
 } from '@chakra-ui/react';
 import Hero from 'components/website/hero';
 import MainLayout from 'layouts/main';
-import { AbsenceWithMember, Member } from 'common/types';
+import { AbsenceWithMember } from 'common/types';
+import { buildUrlParams } from 'utils';
 
-export const getStaticProps = async () => {
-  const absencesWithMembers: AbsenceWithMember[] = await (
-    await fetch(`${process.env.API_URL}/api/absences_with_members_data`)
-  ).json();
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const baseUrl = `${process.env.API_URL}/api/absences_with_members_data`;
+
+  const requestUrl = `${baseUrl}?${buildUrlParams(query)}`;
+
+  const absencesWithMembers: AbsenceWithMember[] = await (await fetch(requestUrl)).json();
 
   return {
     props: {
@@ -30,20 +33,17 @@ export const getStaticProps = async () => {
   };
 };
 
-const HomePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+const HomePage: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
   absencesWithMembers
 }) => {
-  const renderTableRow = (
-    id: number,
-    startDate: Date,
-    endDate: Date,
-    type: string,
-    member: Member
-  ): ReactElement => (
-    <Tr key={`${id}_${startDate}`}>
-      <Td>{type === 'sickness' ? `${member.name} is sick` : `${member.name} is on ${type}`}</Td>
-      <Td>{startDate}</Td>
-      <Td>{endDate}</Td>
+  const buildTitle = (type: string, name: string): string =>
+    type === 'sickness' ? `${name} is sick` : `${name} is on ${type}`;
+
+  const renderTableRow = (absence: AbsenceWithMember): ReactElement => (
+    <Tr key={`${absence?.id}_${absence?.startDate}`}>
+      <Td>{buildTitle(absence.type, absence.member.name)}</Td>
+      <Td>{absence?.startDate}</Td>
+      <Td>{absence?.endDate}</Td>
     </Tr>
   );
 
@@ -55,7 +55,7 @@ const HomePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       </Head>
 
       <Box>
-        <VStack spacing={[16, 16, 24, 24]} align="center" as="main">
+        <VStack spacing={[16, 16, 16, 16]} align="center" as="main">
           <Hero
             title="Absence Manager"
             description="Code Challenge."
@@ -79,11 +79,7 @@ const HomePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 <Th>End Date</Th>
               </Tr>
             </Thead>
-            <Tbody>
-              {absencesWithMembers.map(({ id, startDate, endDate, type, member }) =>
-                renderTableRow(id, startDate, endDate, type, member)
-              )}
-            </Tbody>
+            <Tbody>{absencesWithMembers.map((absence) => renderTableRow(absence))}</Tbody>
           </Table>
         </VStack>
       </Box>
