@@ -11,3 +11,12 @@ export const buildUrlParams = (query) => {
     ...params
   });
 };
+
+export const buildTitle = (type: string, name: string): string =>
+  type === 'sickness' ? `${name} is sick` : `${name} is on ${type}`;
+
+export const parseDateToIcalFormat = (date?: Date) => {
+  const stirngDate: string = date ? date.toString() : new Date().toISOString();
+
+  return stirngDate.replace(/[:\-+.&]+/g, '');
+};

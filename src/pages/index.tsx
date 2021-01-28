@@ -17,7 +17,8 @@ import {
 import Hero from 'components/website/hero';
 import MainLayout from 'layouts/main';
 import { AbsenceWithMember } from 'common/types';
-import { buildUrlParams } from 'utils';
+import { buildTitle, buildUrlParams } from 'utils';
+import ICalLink from 'components/ical';
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const baseUrl = `${process.env.API_URL}/api/absences_with_members_data`;
@@ -36,14 +37,14 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 const HomePage: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({
   absencesWithMembers
 }) => {
-  const buildTitle = (type: string, name: string): string =>
-    type === 'sickness' ? `${name} is sick` : `${name} is on ${type}`;
-
   const renderTableRow = (absence: AbsenceWithMember): ReactElement => (
     <Tr key={`${absence?.id}_${absence?.startDate}`}>
       <Td>{buildTitle(absence.type, absence.member.name)}</Td>
       <Td>{absence?.startDate}</Td>
       <Td>{absence?.endDate}</Td>
+      <Td>
+        <ICalLink events={[absence]} />
+      </Td>
     </Tr>
   );
 
@@ -69,14 +70,18 @@ const HomePage: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>>
               </NextLink>
             }
           />
-
+          <div>
+            <span>Download ical </span>
+            <ICalLink events={absencesWithMembers} />
+          </div>
           <Table variant="simple">
-            <TableCaption>Absences with Members Name</TableCaption>
+            <TableCaption>Scheduled Absences</TableCaption>
             <Thead>
               <Tr>
                 <Th>Status</Th>
                 <Th>Start Date</Th>
                 <Th>End Date</Th>
+                <Th>Download</Th>
               </Tr>
             </Thead>
             <Tbody>{absencesWithMembers.map((absence) => renderTableRow(absence))}</Tbody>

@@ -5,7 +5,6 @@ import { buildUrlParams } from 'utils';
 const getAllAbsencesWithMembers = async (req: NextApiRequest, res: NextApiResponse) => {
   const baseAbsencesURL = `${process.env.API_URL}/api/absences`;
   const baseMembersURL = `${process.env.API_URL}/api/members`;
-  console.log('getAllAbsencesWithMembers => req?.query: ', req?.query);
 
   const absencesRequestUrl = `${baseAbsencesURL}?${buildUrlParams(req?.query)}`;
 

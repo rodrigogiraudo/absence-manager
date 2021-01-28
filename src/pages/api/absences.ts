@@ -4,8 +4,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import AbsencesData from 'mock_data/absences.json';
 
 const getAllAbsences = (req: NextApiRequest, res: NextApiResponse): void => {
-  console.log('req?.query: ', req?.query);
   let result = AbsencesData.payload;
+
   if (req?.query?.userId)
     result = result.filter((absence) => absence.userId === Number(req.query.userId));
   if (req?.query?.startDate)
