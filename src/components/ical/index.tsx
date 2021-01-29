@@ -1,6 +1,6 @@
 import { AbsenceWithMember } from 'common/types';
 import { FC } from 'react';
-import { buildTitle, parseDateToIcalFormat } from 'utils';
+import { buildTitle, parseDateToIcalFormat } from '../../utils';
 import { DownloadIcon } from '@chakra-ui/icons';
 
 const buildFileStructure = (events: AbsenceWithMember[]) => `
@@ -37,8 +37,9 @@ interface ICalLinkProps {
 const ICalLink: FC<ICalLinkProps> = ({ children, events, fileName = 'absences' }) => {
   return (
     <a
+      data-testid="ical-link"
       href={'data:text/calendar;charset=utf8,' + escape(buildFileStructure(events))}
-      download={`${fileName}file.ics`}>
+      download={`${fileName}.ics`}>
       {children || <DownloadIcon />}
     </a>
   );

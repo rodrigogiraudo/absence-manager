@@ -14,11 +14,11 @@ import {
   Tbody,
   Td
 } from '@chakra-ui/react';
-import Hero from 'components/website/hero';
-import MainLayout from 'layouts/main';
-import { AbsenceWithMember } from 'common/types';
-import { buildTitle, buildUrlParams } from 'utils';
-import ICalLink from 'components/ical';
+import Hero from '../components/website/hero';
+import MainLayout from '../layouts/main';
+import { AbsenceWithMember } from '../common/types';
+import { buildTitle, buildUrlParams } from '../utils';
+import ICalLink from '../components/ical';
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const baseUrl = `${process.env.API_URL}/api/absences_with_members_data`;

@@ -1,6 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
-import Footer from 'components/website/footer';
-import Navbar from 'components/website/navbar';
+import Footer from '../components/website/footer';
+import Navbar from '../components/website/navbar';
 import { NextPage } from 'next';
 import React from 'react';
 

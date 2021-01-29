@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Should render the home page 1`] = `
+<div
+  class="css-1h52ouc"
+>
+  <header
+    class="css-16cfykx"
+  >
+    <nav
+      class="css-9jay18"
+    >
+      <div
+        class="css-14hodvc"
+      >
+        <p
+          class="chakra-text css-1xby8pu"
+        >
+          @rodrigogiraudo/absence-manager
+        </p>
+      </div>
+    </nav>
+  </header>
+  <div
+    class="css-zasr3r"
+  >
+    <div
+      class="css-0"
+    >
+      <main
+        class="chakra-stack css-12n6yjf"
+      >
+        <div
+          class="chakra-stack css-uh8w3w"
+        >
+          <h1
+            class="chakra-heading css-kx8mgd"
+          >
+            Absence Manager
+          </h1>
+          <p
+            class="chakra-text css-23almm"
+          >
+            Code Challenge.
+          </p>
+          <div
+            class="css-zoser8"
+          >
+            <button
+              class="chakra-button css-oqfhsh"
+              type="button"
+            >
+              <span
+                aria-label="Rocket emoji"
+                role="img"
+              >
+                Get the code 🚀
+              </span>
+            </button>
+          </div>
+        </div>
+        <div>
+          <span>
+            Download ical 
+          </span>
+          <a
+            data-testid="ical-link"
+            download="absences.ics"
+            href="data:text/calendar;charset=utf8,%0ABEGIN%3AVCALENDAR%0AVERSION%3A2.0%0APRODID%3A-//bobbin%20v0.1//NONSGML%20iCal%20Writer//EN%0ACALSCALE%3AGREGORIAN%0AMETHOD%3APUBLISH%0A%0ABEGIN%3AVEVENT%0ADTSTART%3A20170111%0ADTEND%3A20170111%0ADTSTAMP%3A20210129T194808109Z%7D%0AUID%3A449378900@crewmeister.com%0ACREATED%3A20170109T1745470000100%0ADESCRIPTION%3AThe%20member%20Ines%20has%20a%20planned%20absence%20due%20to%20vacation%20starting%202017-01-11%20until%202017-01-11%0ASEQUENCE%3A0%0ASTATUS%3ACONFIRMED%0ASUMMARY%3AOOO%20Ines%20is%20on%20vacation%0ATRANSP%3AOPAQUE%0AEND%3AVEVENT%0ABEGIN%3AVEVENT%0ADTSTART%3A20170227%0ADTEND%3A20170227%0ADTSTAMP%3A20210129T194808109Z%7D%0AUID%3A264305060@crewmeister.com%0ACREATED%3A20170217T1319370000100%0ADESCRIPTION%3AThe%20member%20Bernhard%20has%20a%20planned%20absence%20due%20to%20vacation%20starting%202017-02-27%20until%202017-02-27%0ASEQUENCE%3A0%0ASTATUS%3ACONFIRMED%0ASUMMARY%3AOOO%20Bernhard%20is%20on%20vacation%0ATRANSP%3AOPAQUE%0AEND%3AVEVENT%0AEND%3AVCALENDAR%0A"
+          >
+            <svg
+              class="chakra-icon css-onkibi"
+              focusable="false"
+              viewBox="0 0 14 14"
+            >
+              <path
+                d="M11.2857,6.05714 L10.08571,4.85714 L7.85714,7.14786 L7.85714,1 L6.14286,1 L6.14286,7.14786 L3.91429,4.85714 L2.71429,6.05714 L7,10.42857 L11.2857,6.05714 Z M1,11.2857 L1,13 L13,13 L13,11.2857 L1,11.2857 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+        <table
+          class="chakra-table css-0"
+          role="table"
+        >
+          <caption
+            class="css-18i7bby"
+          >
+            Scheduled Absences
+          </caption>
+          <thead
+            class="css-0"
+          >
+            <tr
+              class="css-0"
+              role="row"
+            >
+              <th
+                class="css-0"
+              >
+                Status
+              </th>
+              <th
+                class="css-0"
+              >
+                Start Date
+              </th>
+              <th
+                class="css-0"
+              >
+                End Date
+              </th>
+              <th
+                class="css-0"
+              >
+                Download
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="css-0"
+          >
+            <tr
+              class="css-0"
+              role="row"
+            >
+              <td
+                class="css-0"
+                role="gridcell"
+              >
+                Ines is on vacation
+              </td>
+              <td
+                class="css-0"
+                role="gridcell"
+              >
+                2017-01-11
+              </td>
+              <td
+                class="css-0"
+                role="gridcell"
+              >
+                2017-01-11
+              </td>
+              <td
+                class="css-0"
+                role="gridcell"
+              >
+                <a
+                  data-testid="ical-link"
+                  download="absences.ics"
+                  href="data:text/calendar;charset=utf8,%0ABEGIN%3AVCALENDAR%0AVERSION%3A2.0%0APRODID%3A-//bobbin%20v0.1//NONSGML%20iCal%20Writer//EN%0ACALSCALE%3AGREGORIAN%0AMETHOD%3APUBLISH%0A%0ABEGIN%3AVEVENT%0ADTSTART%3A20170111%0ADTEND%3A20170111%0ADTSTAMP%3A20210129T194808116Z%7D%0AUID%3A857809620@crewmeister.com%0ACREATED%3A20170109T1745470000100%0ADESCRIPTION%3AThe%20member%20Ines%20has%20a%20planned%20absence%20due%20to%20vacation%20starting%202017-01-11%20until%202017-01-11%0ASEQUENCE%3A0%0ASTATUS%3ACONFIRMED%0ASUMMARY%3AOOO%20Ines%20is%20on%20vacation%0ATRANSP%3AOPAQUE%0AEND%3AVEVENT%0AEND%3AVCALENDAR%0A"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      d="M11.2857,6.05714 L10.08571,4.85714 L7.85714,7.14786 L7.85714,1 L6.14286,1 L6.14286,7.14786 L3.91429,4.85714 L2.71429,6.05714 L7,10.42857 L11.2857,6.05714 Z M1,11.2857 L1,13 L13,13 L13,11.2857 L1,11.2857 Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="css-0"
+              role="row"
+            >
+              <td
+                class="css-0"
+                role="gridcell"
+              >
+                Bernhard is on vacation
+              </td>
+              <td
+                class="css-0"
+                role="gridcell"
+              >
+                2017-02-27
+              </td>
+              <td
+                class="css-0"
+                role="gridcell"
+              >
+                2017-02-27
+              </td>
+              <td
+                class="css-0"
+                role="gridcell"
+              >
+                <a
+                  data-testid="ical-link"
+                  download="absences.ics"
+                  href="data:text/calendar;charset=utf8,%0ABEGIN%3AVCALENDAR%0AVERSION%3A2.0%0APRODID%3A-//bobbin%20v0.1//NONSGML%20iCal%20Writer//EN%0ACALSCALE%3AGREGORIAN%0AMETHOD%3APUBLISH%0A%0ABEGIN%3AVEVENT%0ADTSTART%3A20170227%0ADTEND%3A20170227%0ADTSTAMP%3A20210129T194808117Z%7D%0AUID%3A465665830@crewmeister.com%0ACREATED%3A20170217T1319370000100%0ADESCRIPTION%3AThe%20member%20Bernhard%20has%20a%20planned%20absence%20due%20to%20vacation%20starting%202017-02-27%20until%202017-02-27%0ASEQUENCE%3A0%0ASTATUS%3ACONFIRMED%0ASUMMARY%3AOOO%20Bernhard%20is%20on%20vacation%0ATRANSP%3AOPAQUE%0AEND%3AVEVENT%0AEND%3AVCALENDAR%0A"
+                >
+                  <svg
+                    class="chakra-icon css-onkibi"
+                    focusable="false"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      d="M11.2857,6.05714 L10.08571,4.85714 L7.85714,7.14786 L7.85714,1 L6.14286,1 L6.14286,7.14786 L3.91429,4.85714 L2.71429,6.05714 L7,10.42857 L11.2857,6.05714 Z M1,11.2857 L1,13 L13,13 L13,11.2857 L1,11.2857 Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </div>
+  <footer
+    class="css-16cfykx"
+  >
+    <hr
+      aria-orientation="horizontal"
+      class="chakra-divider css-agt22"
+      role="separator"
+    />
+    <div
+      class="css-14hodvc"
+    >
+      <p
+        class="chakra-text css-5fbnf6"
+      >
+        @rodrigogiraudo/absence-manager
+      </p>
+    </div>
+  </footer>
+</div>
+`;
